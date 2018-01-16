@@ -1,30 +1,32 @@
 # React Native Touch ID
 
 [![react-native version](https://img.shields.io/badge/react--native-0.40-blue.svg?style=flat-square)](http://facebook.github.io/react-native/releases/0.40)
-[![npm version](https://img.shields.io/npm/v/react-native-touch-id.svg?style=flat-square)](https://www.npmjs.com/package/react-native-touch-id)
-[![npm downloads](https://img.shields.io/npm/dm/react-native-touch-id.svg?style=flat-square)](https://www.npmjs.com/package/react-native-touch-id)
-[![Code Climate](https://img.shields.io/codeclimate/github/naoufal/react-native-touch-id.svg?style=flat-square)](https://codeclimate.com/github/naoufal/react-native-touch-id)
+[![npm version](https://img.shields.io/npm/v/react-native-bio-id.svg?style=flat-square)](https://www.npmjs.com/package/react-native-bio-id)
+[![npm downloads](https://img.shields.io/npm/dm/react-native-bio-id.svg?style=flat-square)](https://www.npmjs.com/package/react-native-bio-id)
+[![Code Climate](https://img.shields.io/codeclimate/github/naoufal/react-native-bio-id.svg?style=flat-square)](https://codeclimate.com/github/naoufal/react-native-bio-id)
+
+For some reason project react-native-touch-id was not updated in npm
 
 React Native Touch ID is a [React Native](http://facebook.github.io/react-native/) library for authenticating users with biometric authentication methods like Face ID and Touch ID on both iOS and Android (experimental).
 
-![react-native-touch-id](https://cloud.githubusercontent.com/assets/1627824/7975919/2c69a776-0a42-11e5-9773-3ea1c7dd79f3.gif)
+![react-native-bio-id](https://cloud.githubusercontent.com/assets/1627824/7975919/2c69a776-0a42-11e5-9773-3ea1c7dd79f3.gif)
 
 ## Documentation
-- [Install](https://github.com/naoufal/react-native-touch-id#install)
-- [Usage](https://github.com/naoufal/react-native-touch-id#usage)
-- [Example](https://github.com/naoufal/react-native-touch-id#example)
-- [Fallback](https://github.com/naoufal/react-native-touch-id#fallback)
-- [Methods](https://github.com/naoufal/react-native-touch-id#methods)
-- [Errors](https://github.com/naoufal/react-native-touch-id#errors)
-- [License](https://github.com/naoufal/react-native-touch-id#license)
+- [Install](https://github.com/naoufal/react-native-bio-id#install)
+- [Usage](https://github.com/naoufal/react-native-bio-id#usage)
+- [Example](https://github.com/naoufal/react-native-bio-id#example)
+- [Fallback](https://github.com/naoufal/react-native-bio-id#fallback)
+- [Methods](https://github.com/naoufal/react-native-bio-id#methods)
+- [Errors](https://github.com/naoufal/react-native-bio-id#errors)
+- [License](https://github.com/naoufal/react-native-bio-id#license)
 
 ## Install
 ```shell
-npm i --save react-native-touch-id
+npm i --save react-native-bio-id
 ```
 or
 ```shell
-yarn add react-native-touch-id
+yarn add react-native-bio-id
 ```
 
 ## Support
@@ -36,7 +38,7 @@ In order to use Biometric Authentication, you must first link the library to you
 
 Or use the built-in command:
 ```shell
-react-native link react-native-touch-id
+react-native link react-native-bio-id
 ```
 
 ### Platform Differences
@@ -51,16 +53,16 @@ Error handling is also different between the platforms, with iOS currently provi
 Once you've linked the library, you'll want to make it available to your app by requiring it:
 
 ```js
-var TouchID = require('react-native-touch-id');
+var BioID = require('react-native-bio-id');
 ```
 or
 ```js
-import TouchID from 'react-native-touch-id'
+import BioID from 'react-native-bio-id'
 ```
 
 Requesting Face ID/Touch ID Authentication is as simple as calling:
 ```js
-TouchID.authenticate('to demo this react-native component', optionalConfigObject)
+BioID.authenticate('to demo this react-native component', optionalConfigObject)
   .then(success => {
     // Success code
   })
@@ -74,12 +76,12 @@ TouchID.authenticate('to demo this react-native component', optionalConfigObject
 Using Face ID/Touch ID in your app will usually look like this:
 ```js
 import React from "react"
-var TouchID = require('react-native-touch-id');
-//or import TouchID from 'react-native-touch-id'
+var BioID = require('react-native-bio-id');
+//or import BioID from 'react-native-bio-id'
 
 class YourComponent extends React.Component {
   _pressHandler() {
-    TouchID.authenticate('to demo this react-native component', optionalConfigObject)
+    BioID.authenticate('to demo this react-native component', optionalConfigObject)
       .then(success => {
         AlertIOS.alert('Authenticated Successfully');
       })
@@ -121,7 +123,7 @@ const optionalConfigObject = {
   color: "#e00606"
 }
 
-TouchID.authenticate('to demo this react-native component', optionalConfigObject)
+BioID.authenticate('to demo this react-native component', optionalConfigObject)
   .then(success => {
     AlertIOS.alert('Authenticated Successfully');
   })
@@ -136,7 +138,7 @@ Returns a `Promise` that resolves to a `String` of `FaceID` or `TouchID` .
 
 __Examples__
 ```js
-TouchID.isSupported()
+BioID.isSupported()
   .then(biometryType => {
     // Success code
     if (biometryType === 'FaceID') {
@@ -152,7 +154,7 @@ TouchID.isSupported()
 ```
 
 ## Errors
-There are various reasons why biomentric authentication may fail.  When it does fails, `TouchID.authenticate` will return an error code representing the reason.
+There are various reasons why biomentric authentication may fail.  When it does fails, `BioID.authenticate` will return an error code representing the reason.
 
 Below is a list of error codes that can be returned **on iOS**:
 
@@ -167,6 +169,7 @@ Below is a list of error codes that can be returned **on iOS**:
 | `LAErrorTouchIDNotEnrolled` | Authentication could not start because Touch ID has no enrolled fingers. |
 | `RCTTouchIDUnknownError` | Could not authenticate for an unknown reason. |
 | `RCTTouchIDNotSupported` | Device does not support Touch ID. |
+| `RCTFaceIDNotAllow` | User not allow use Face ID. |
 
 _More information on errors can be found in [Apple's Documentation](https://developer.apple.com/library/prerelease/ios/documentation/LocalAuthentication/Reference/LAContext_Class/index.html#//apple_ref/c/tdef/LAError)._
 

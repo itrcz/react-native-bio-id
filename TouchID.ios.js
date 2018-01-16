@@ -17,7 +17,7 @@ export default {
     return new Promise((resolve, reject) => {
       NativeTouchID.isSupported((error, biometryType) => {
         if (error) {
-          return reject(createError(error.message));
+          return reject(error);
         }
 
         resolve(biometryType);
@@ -38,29 +38,11 @@ export default {
 
     return new Promise((resolve, reject) => {
       NativeTouchID.authenticate(authReason, error => {
-        // Return error if rejected
         if (error) {
-          return reject(createError(error.message));
+          return reject(error);
         }
-
         resolve(true);
       });
     });
   }
 };
-
-function TouchIDError(name, details) {
-  this.name = name || 'TouchIDError';
-  this.message = details.message || 'Touch ID Error';
-  this.details = details || {};
-}
-
-TouchIDError.prototype = Object.create(Error.prototype);
-TouchIDError.prototype.constructor = TouchIDError;
-
-function createError(error) {
-  let details = ERRORS[error];
-  details.name = error;
-
-  return new TouchIDError(error, details);
-}

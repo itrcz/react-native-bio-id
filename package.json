@@ -1,7 +1,7 @@
 {
-  "name": "react-native-touch-id",
-  "version": "3.1.0",
-  "description": "React Native authentication with the native Touch ID popup.",
+  "name": "react-native-bio-id",
+  "version": "4.0.2",
+  "description": "React Native authentication with the native Touch ID & Face ID popup.",
   "scripts": {
     "lint": "node_modules/.bin/eslint .",
     "start": "node_modules/react-native/packager/packager.sh",
@@ -10,13 +10,15 @@
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/naoufal/react-native-touch-id.git"
+    "url": "https://github.com/naoufal/react-native-bio-id.git"
   },
   "keywords": [
     "react-native",
     "react",
     "native",
+    "bio-id",
     "touch-id",
+    "face-id",
     "react-component",
     "react-native-component",
     "authentication",
@@ -27,9 +29,9 @@
   "author": "Naoufal Kadhom <naoufalkadhom@gmail.com> (https://github.com/naoufal)",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/naoufal/react-native-touch-id/issues"
+    "url": "https://github.com/jleed/react-native-bio-id/issues"
   },
-  "homepage": "https://github.com/naoufal/react-native-touch-id",
+  "homepage": "https://github.com/jleed/react-native-bio-id",
   "devDependencies": {
     "eslint": "2.0.0",
     "eslint-plugin-react": "2.7.1"
