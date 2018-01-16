@@ -1,5 +1,7 @@
 #import "TouchID.h"
 #import <React/RCTUtils.h>
+#define IS_IPHONE (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
+#define IS_IPHONE_X (IS_IPHONE && [[UIScreen mainScreen] bounds].size.height == 812.0f)
 
 @implementation TouchID
 
@@ -14,6 +16,10 @@ RCT_EXPORT_METHOD(isSupported: (RCTResponseSenderBlock)callback)
         callback(@[[NSNull null], [self getBiometryType:context]]);
         // Device does not support TouchID
     } else {
+        if (IS_IPHONE_X && (long)error.code == -6) {
+            callback(@[RCTMakeError(@"RCTFaceIDNotAllowed", nil, nil)]);
+            return;
+        }
         callback(@[RCTMakeError(@"RCTTouchIDNotSupported", nil, nil)]);
         return;
     }
