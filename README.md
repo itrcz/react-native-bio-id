@@ -3,7 +3,7 @@
 [![react-native version](https://img.shields.io/badge/react--native-0.40-blue.svg?style=flat-square)](http://facebook.github.io/react-native/releases/0.40)
 [![npm version](https://img.shields.io/npm/v/react-native-bio-id.svg?style=flat-square)](https://www.npmjs.com/package/react-native-bio-id)
 [![npm downloads](https://img.shields.io/npm/dm/react-native-bio-id.svg?style=flat-square)](https://www.npmjs.com/package/react-native-bio-id)
-[![Code Climate](https://img.shields.io/codeclimate/github/naoufal/react-native-bio-id.svg?style=flat-square)](https://codeclimate.com/github/naoufal/react-native-bio-id)
+[![Code Climate](https://img.shields.io/codeclimate/github/itrcz/react-native-bio-id.svg?style=flat-square)](https://codeclimate.com/github/itrcz/react-native-bio-id)
 
 For some reason project react-native-touch-id was not updated in npm
 
@@ -12,13 +12,13 @@ React Native Touch ID is a [React Native](http://facebook.github.io/react-native
 ![react-native-bio-id](https://cloud.githubusercontent.com/assets/1627824/7975919/2c69a776-0a42-11e5-9773-3ea1c7dd79f3.gif)
 
 ## Documentation
-- [Install](https://github.com/naoufal/react-native-bio-id#install)
-- [Usage](https://github.com/naoufal/react-native-bio-id#usage)
-- [Example](https://github.com/naoufal/react-native-bio-id#example)
-- [Fallback](https://github.com/naoufal/react-native-bio-id#fallback)
-- [Methods](https://github.com/naoufal/react-native-bio-id#methods)
-- [Errors](https://github.com/naoufal/react-native-bio-id#errors)
-- [License](https://github.com/naoufal/react-native-bio-id#license)
+- [Install](https://github.com/itrcz/react-native-bio-id#install)
+- [Usage](https://github.com/itrcz/react-native-bio-id#usage)
+- [Example](https://github.com/itrcz/react-native-bio-id#example)
+- [Fallback](https://github.com/itrcz/react-native-bio-id#fallback)
+- [Methods](https://github.com/itrcz/react-native-bio-id#methods)
+- [Errors](https://github.com/itrcz/react-native-bio-id#errors)
+- [License](https://github.com/itrcz/react-native-bio-id#license)
 
 ## Install
 ```shell
@@ -174,7 +174,7 @@ Below is a list of error codes that can be returned **on iOS**:
 _More information on errors can be found in [Apple's Documentation](https://developer.apple.com/library/prerelease/ios/documentation/LocalAuthentication/Reference/LAContext_Class/index.html#//apple_ref/c/tdef/LAError)._
 
 ## License
-Copyright (c) 2015, [Naoufal Kadhom](http://naoufal.com/)
+Copyright (c) 2015, [itrcz Kadhom](http://itrcz.com/)
 
 Permission to use, copy, modify, and/or distribute this software for any purpose with or without fee is hereby granted, provided that the above copyright notice and this permission notice appear in all copies.
 
